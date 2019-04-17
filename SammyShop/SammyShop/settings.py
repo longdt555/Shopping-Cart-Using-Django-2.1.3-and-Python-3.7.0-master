@@ -25,7 +25,7 @@ SECRET_KEY = '_62@6uga#2wr71i6^+(qp2pod+g9%u1-30t19zkcll@91+7_k%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -79,7 +79,7 @@ DATABASES = {
         'ENGINE': 'mysql.connector.django',
         'NAME': 'sammy_shopping_cart',
         'USER': 'root',
-        'PASSWORD': '2c3a4n56A',
+        'PASSWORD': '2c3a4n56A!@',
         'OPTIONS':{
             'autocommit': True,
         }
