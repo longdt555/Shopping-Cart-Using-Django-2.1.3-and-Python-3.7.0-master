@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth import authenticate, login
-from .forms import LoginForm
+from .forms import LoginForm, RegistrationForm
 # Create your views here.
 
 #when the user_login view is called with a GET method.
@@ -42,3 +42,13 @@ def user_login(request):
     else:
         form = LoginForm()
     return render(request, 'shop/login.html', {'form':form})
+
+def user_register(request):
+    if request.method == "POST":
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('shop:login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'shop/register.html', {'form': form})
